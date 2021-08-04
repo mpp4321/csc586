@@ -30,9 +30,9 @@ node1.addService(pg.Execute(shell="sh", command="/local/repository/silly.sh"))
 node = request.XenVM("observer")
 node.routable_control_ip = "true"  
 node.disk_image = "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD"
-iface = node.addInterface("if" + str(i))
+iface = node.addInterface("if0")
 iface.component_id = "eth1"
-iface.addAddress(pg.IPv4Address(prefixForIP + str(i + 1), "255.255.255.0"))
+iface.addAddress(pg.IPv4Address(prefixForIP + str(1), "255.255.255.0"))
 link.addInterface(iface)
 
 # Print the RSpec to the enclosing page.
